@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>ICE-CREAM FACTORY</title>
+
+  </head>
+
+
+  <body>
+    
+    <header id="header" class="text-center py-5 mb-4">
+        
+        <div class="container">
+            <a href="Index.html"><h1>ICE CREAM FACTORY</h1></a>
+        </div>
+        </div>
+    </header>
+
+    <!-- fist container for all blue buttons -->
+    <div class="container">
+        <div class="col-md-4-large">
+            <div class="img"><img src="assets/images/icecream.png" class="rounded float-left" width="300" height="500"></div>
+        </div>
+        
+       <div class="row">
+           <h3>ORDER HERE</h3>
+       </div>
+        <!-- bootstrap for the SMALL MED LARGE buttons -->
+        <div class="container">
+            
+            <div class="size-row">
+                <h2>Choose Size</h2>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-primary small">SMALL</button>
+                        <button type="button" class="btn btn-outline-primary medium">MEDIUM</button>
+                        <button type="button" class="btn btn-outline-primary large">LARGE</button>
+                    </div>
+        
+                    <div class="col size-holder">
+                        
+                    </div>
+        
+                </div>
+            </div>
+        
+            <div class="cone">
+                <h2>Choose Type</h2>
+                <div class="row">
+                    
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-primary reg-cone" >CONE</button>
+                        <button type="button" class="btn btn-outline-primary waffle-cone">WAFFLE CONE</button>
+                        <button type="button" class="btn btn-outline-primary cup">CUP</button>
+                    </div>
+                    <div class="col cone-holder">
+                        
+                    </div>
+                </div>
+            </div>
+        
+            <div class="flavor-row-1">
+                <h2>Choose Flavor</h2>
+                <div class="row">
+                    
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-primary flavor butter-pecan">BUTTER PECAN</button>
+                        <button type="button" class="btn btn-outline-primary flavor fat-free-chocolate">FAT FREE
+                            CHOCOLATE</button>
+                        <button type="button" class="btn btn-outline-primary flavor french-chocolate">FRENCH CHOCOLATE</button>
+                        <button type="button" class="btn btn-outline-primary flavor french-vanilla">FRENCH VANILLA</button>
+                        <button type="button" class="btn btn-outline-primary flavor light-vanilla">LIGHT VANILLA</button>
+                        <button type="button" class="btn btn-outline-primary flavor mint-chocolate">MINT CHOCOLATE</button>
+                        <button type="button" class="btn btn-outline-primary flavor vanilla-fudge">VANILLA FUDGE</button>
+                        <button type="button" class="btn btn-outline-primary flavor chocolate-caramel">CHOCOLATE
+                            CARAMEL</button>
+                    </div>
+        
+                    <div class="col flavor-holder">
+        
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="container">
+        
+            <div class="checkout">
+                <div class="row">
+                    <div class="col">
+        
+                    </div>
+        
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-danger add-to-order">ADD TO ORDER</button>
+                    </div>
+        
+                </div>
+            </div>
+        
+        
+        </div>
+        <div class="page-break"></div>
+        <div class="container">
+            <div class="order-items">
+                <div class="row">
+                    <div class="col" id="tableGoesHere">
+                        
+        
+                    </div>
+        
+                </div>
+                <div class="row">
+                    <div class="col" id="clearButtonHere">
+        
+                    </div>
+                    <div class="col" id="checkoutButtonHere">
+        
+                    </div>
+                    <div class="col" id="shoppingCart">
+                        <button class="btn btn-outline-danger" onclick="shoppingCart()">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+                        </button>
+                    </div>
+        
+                </div>
+        
+            </div>
+        </div>
+        </div>
+        
+        
+        <script>
+
+            var size = "";
+            var coneType = "";
+            var flavor = [];
+
+            // update var size = small on click, display small size
+            $(".small").on("click", function () {
+
+                console.log("SMALL BUTTON");
+
+                var size = "SMALL";
+
+                console.log(size);
+                size = "small";
+
+                $(".size-holder").text(size);
+
+            })
+
+            // update var size = medium on click, display med size
+            $(".medium").on("click", function () {
+
+                console.log("MED BUTTON");
+
+                var size = "MEDIUM";
+                size = "medium";
+                console.log(size);
+
+                $(".size-holder").text(size);
+
+            })
+
+            // update var size = large on click, display large size
+            $(".large").on("click", function () {
+
+                console.log("LRG BUTTON");
+
+                var size = "LARGE";
+                size = "large";
+                console.log(size);
+
+                $(".size-holder").text(size);
+
+            })
+
+            // update var coneType = Regular Cone on click and display it
+            $(".reg-cone").on("click", function () {
+
+                console.log("SUGAR CONE LOG");
+
+                var coneType = "SUGAR CONE";
+                type = "RegularCone";
+                console.log(coneType);
+
+                $(".cone-holder").text(coneType);
+
+            })
+
+            // update var coneType = Waffle Cone on click and display it
+            $(".waffle-cone").on("click", function () {
+
+                console.log("Waffle CONE LOG");
+
+                var coneType = "WAFFLE CONE";
+                type = "WaffleCone";
+
+                console.log(coneType);
+
+                $(".cone-holder").text(coneType);
+
+            })
+
+            // update var coneType = Waffle Cone on click and display it
+            $(".cup").on("click", function () {
+
+                console.log("CUP");
+
+                var coneType = "CUP";
+                type = "CUP";
+                console.log(coneType);
+
+                $(".cone-holder").text(coneType);
+
+            })
+
+            // update var coneType = Waffle Cone on click and display it
+            $(".flavor").on("click", function () {
+
+                console.log("FLAVOR");
+
+
+                var flav = this.innerHTML;
+                var curr = $(".flavor-holder").text();
+
+                if (curr.indexOf("Holder") != -1) {
+                    $(".flavor-holder").text("");
+                }
+                $(".flavor-holder").text(curr + flav + ",");
+                addItem(flav.trim());
+                console.log(this.innerHTML);
+
+
+
+            })
+
+            $(".add-to-order").on("click", function () {
+
+                console.log("here");
+
+                var cone = $(".cone-holder").text();
+                var size = $(".size-holder").text();
+                var currentFlavors = $(".flavor-holder").text();
+                var tableStr = '<table id="myTable"><tbody></tbody></table>';
+                var clearButtonStr = '<button type="button" class="btn btn-outline-danger clear-order" onclick = "clearOrders()">CLEAR ORDER</button>';
+
+                if (cone.indexOf("PLACE HOLDER") != -1) {
+                    alert("Choose a cone first");
+                }
+                else if (size.indexOf("PLACE HOLDER") != -1) {
+                    alert("Choose a size first");
+                }
+                else {
+                    if (numItems == 0) {
+                        document.getElementById("tableGoesHere").innerHTML = tableStr;
+                        document.getElementById("clearButtonHere").innerHTML = clearButtonStr;
+                    }
+                    orders.push({ "Size": size, "Type": type, "flavors": items });
+                    items = [];
+                    numItems++;
+                    var itemStr = "<tr><td>" + numItems + "</td><td>" + size + " " + cone + "</td><td>" + currentFlavors + "</td></tr>";
+                    $('#myTable > tbody:last-child').append(itemStr);
+                    $(".flavor-holder").text("");
+                }
+
+            })
+
+            function clearOrders() {
+                console.log("Cleared");
+                $('#myTable').empty();
+                items = [];
+                orders = [];
+                document.getElementById("clearButtonHere").innerHTML = "";
+                document.getElementById("tableGoesHere").innerHTML = "";
+                numItems = 0;
+
+            };
+            function shoppingCart() {
+                console.log("Shoppingcart");
+                if (orders.length > 0) {
+                    var newurl = generateQueryStr("cart.html");
+                    window.location.href = newurl;
+                }
+                else {
+                    alert("You need at least one ice cream");
+                }
+            }
+
+
+
+
+
+
+        </script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- Added Moment JS -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+        
+        
+        </body>
+        
+        </html>
+    <!-- Footer -->
+    <footer class="page-footer font-small indigo">
+    
+        <!-- Footer Links -->
+        <div class="container">
+    
+            <!-- Grid row-->
+            <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+    
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="Index.html">Order Here</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+    
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="nutrition.html">Nutrition</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+    
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="cart.html">Cart</a>
+                    </h6>
+                </div>
+    
+    
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="contactus.html">Contact</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+    
+            </div>
+            <!-- Grid row-->
+            <hr class="rgba-white-light" style="margin: 0 15%;">
+    
+            <!-- Grid row-->
+            <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+    
+                <!-- Grid column -->
+                <div class="col-md-8 col-12 mt-5">
+                    <p style="line-height: 1.7rem">We make all our ice cream from scratch in Greenpoint, Brooklyn. The
+                        Classic scoops are crafted with nothing more than
+                        fresh milk and cream, cane sugar, and egg yolks. The Vegan scoops are made with housemade cashew
+                        milk, organic coconut
+                        milk, organic extra virgin coconut oil, organic cane sugar, pure cocoa butter, and organic carob
+                        bean. Both recipes
+                        result in rich, decadent, naturally perfect ice cream.
+                    </p>
+                </div>
+    
+    
+            </div>
+        <!-- Footer Links -->
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    
+    </footer>
+    <!-- Footer -->
+
+
+
+<script src="back.js"></script>
+
+<!-- Attached the javascript and CSS file -->
+
+<script src="app.js" ></script>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
